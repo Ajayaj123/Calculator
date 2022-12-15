@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+</head>
+<style>
+   
+    .f:hover{
+    color:cornflowerblue;
+    }
+</style>
+<body class="bg-dark ">
+    <div class="container  ">
+        <div class="row ">
+            <div class="offset-lg-4 col-lg-4  ">
+                <div class="calculator bg-light text-center f " style="border: 1px solid; box-shadow: 2px 4px 2px 2px; border-radius: 10px; ">
+                    <h1 style="text-shadow: 1px 2px red;">Calculator</h1>
+                    <input type="text" placeholder="0" id="data" style="border-radius:10px;border-color: firebrick; font-family: 'Courier New', Courier, monospace; font-size: 25px;">
+                    <div class="mt-2">
+                        <button onclick="but('1')" class="btn btn-primary p-4   !important">1</button>
+                        <button onclick="but('2')" class="btn btn-primary p-4">2</button>
+                        <button onclick="but('3')" class="btn btn-primary p-4">3</button>
+                        <button onclick="but('+')" class="btn btn-success p-4">+</button>
+                    </div>
+                    <div class="mt-2">
+                        <button onclick="but('4')" class="btn btn-danger p-4">4</button>
+                        <button onclick="but('5')" class="btn btn-danger p-4">5</button>
+                        <button onclick="but('6')" class="btn btn-danger p-4">6</button>
+                        <button onclick="but('/')" class="btn btn-success p-4">/</button>
+                    </div>
+                    <div class="mt-2">
+                        <button onclick="but('7')" class="btn btn-warning p-4">7</button>
+                        <button onclick="but('8')" class="btn btn-warning p-4">8</button>
+                        <button onclick="but('9')" class="btn btn-warning p-4">9</button>
+                        <button onclick="but('-')" class="btn btn-success p-4">-</button>
+                    </div>
+                    <div class=" mt-2">
+                        <button onclick="but('0')" class="btn btn-secondary p-4">0</button>
+
+                        <button onclick="but('%')" class="btn btn-secondary p-4">%</button>
+                        <button onclick="but('*')" class="btn btn-secondary p-4">*</button>
+                        <button onclick="but('')" class="btn btn-secondary p-4">c</button>
+                    </div> 
+
+                    <button onclick="calculator('=')" class="btn mt-2"
+                        style="width: 250px;background-color: cadetblue;">=</button> <br><br>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var calc = document.getElementById("data");
+        function but(num) {
+            calc.value += num;
+        }
+
+        function calculator() {
+            try {
+                calc.value = eval(calc.value);
+            }
+            catch (err) {
+                alert("invalid")
+            }
+        }
+
+    </script>
+    <script src="./bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
